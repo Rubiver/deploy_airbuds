@@ -73,8 +73,8 @@ public class TrackService {
 		Track savedTrack = null;
 		
 		// 음원 파일 저장
-		File uploadPath = new File("c:/tracks");
-		File imagePath = new File("c:/tracks/image");
+		File uploadPath = new File("tracks");
+		File imagePath = new File("image");
 
 		if (!uploadPath.exists()) {
 			uploadPath.mkdir();
@@ -177,7 +177,7 @@ public class TrackService {
 		if(imagefile!=null) {
 			TrackImages ientity=imageRepo.findByTrackImagesTrackId(trackId);
 			
-			File imagePath = new File("c:/tracks/image");
+			File imagePath = new File("tracks/image");
 			if (!imagePath.exists()) {
 				imagePath.mkdir();
 			}
@@ -286,7 +286,7 @@ public class TrackService {
 			
 			
 //			경로에 이미지가 있으면 삭제하고 데이터베이스에 값을 지운다.
-			String imagePath="c:/tracks/image"+ File.separator+imageEntity.getImagePath();
+			String imagePath="tracks/image"+ File.separator+imageEntity.getImagePath();
 			File imageToDelete = new File(imagePath);
 			
 			if (imageToDelete.exists()) {
@@ -298,7 +298,7 @@ public class TrackService {
 			}
 			
 //			음원에 값을 확인하고 
-			String filePath = "c:/tracks" + File.separator + entity.getFilePath();
+			String filePath = "tracks" + File.separator + entity.getFilePath();
 			File fileToDelete = new File(filePath);
 			
 
